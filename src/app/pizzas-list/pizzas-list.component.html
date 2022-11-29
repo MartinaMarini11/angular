@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Ingredientes</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pizza of pizzas" [ngClass]="{'oferta': pizza. oferta}">
+            <td><img class="img-muzzarella"[src]="pizza.imagen" [alt]="pizza.nombre"/></td>
+            <td>{{pizza.nombre}}</td>
+            <td>{{pizza.ingredientes}}</td>
+            <td>{{pizza.precio | currency}}</td>
+            <td><span class="badge rounded-pill text-bg-warning" *ngIf="pizza.stock==0">SIN STOCK</span></td>
+        </tr>
+    </tbody>
+</table>
