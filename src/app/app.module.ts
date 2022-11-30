@@ -5,14 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PizzasListComponent } from './pizzas-list/pizzas-list.component';
 
+import { FormsModule} from '@angular/forms';
+import { PizzeriaContactoComponent } from './pizzeria-contacto/pizzeria-contacto.component';
+import { PizzeriaPizzasComponent } from './pizzeria-pizzas/pizzeria-pizzas.component';
+import { CarritoComponent } from './carrito/carrito.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    PizzasListComponent
+    PizzasListComponent,
+    PizzeriaContactoComponent,
+    PizzeriaPizzasComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

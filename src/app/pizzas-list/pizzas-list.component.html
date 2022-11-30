@@ -1,3 +1,4 @@
+
 <table class="table">
     <thead>
         <tr>
@@ -6,6 +7,7 @@
             <th>Ingredientes</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +17,9 @@
             <td>{{pizza.ingredientes}}</td>
             <td>{{pizza.precio | currency}}</td>
             <td><span class="badge rounded-pill text-bg-warning" *ngIf="pizza.stock==0">SIN STOCK</span></td>
+            <td><button class="btn btn-info" (click) = "downQuantity(pizza)">-</button>
+                <input type="text" [(ngModel )]="pizza.quantity">
+                <button class="btn btn-info" (click) = "upQuantity(pizza)">+</button></td>
         </tr>
     </tbody>
 </table>

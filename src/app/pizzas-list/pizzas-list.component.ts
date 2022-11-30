@@ -14,17 +14,19 @@ export class PizzasListComponent implements OnInit {
     nombre : "Muzzarella",
     ingredientes: "Muzzarella y aceitunas",
     precio : 1000,
-    stock : 50,
+    stock : 5,
     imagen : "assets/img/muzzarella.jpg",
     oferta : false,
+    quantity:0,
   },
   {
     nombre : "Especial",
     ingredientes: "Jamón y morrón",
     precio : 1200,
-    stock : 48,
+    stock : 4,
     imagen : "assets/img/muzzarella.jpg",
     oferta : true,
+    quantity:0,
   },
   {
     nombre : "Fugazza",
@@ -33,12 +35,23 @@ export class PizzasListComponent implements OnInit {
     stock : 0,
     imagen : "assets/img/muzzarella.jpg",
     oferta : false,
+    quantity:0, 
   },
 ];
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  upQuantity (pizza: Pizza) : void {
+    if (pizza.quantity < pizza.stock)
+      pizza.quantity++;
+  }
+
+  downQuantity(pizza : Pizza) : void {
+    if  (pizza.quantity>0)
+    pizza.quantity--;
+}
 
 }
 

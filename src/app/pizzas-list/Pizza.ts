@@ -5,4 +5,5 @@
     stock : number;
     imagen : string;
     oferta : boolean;
+    quantity:number;
 }
